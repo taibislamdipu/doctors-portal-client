@@ -5,12 +5,15 @@ import DentalServiceImg from '../../images/dentalService.png';
 
 import allServices from '../fakeData/allServices';
 
-
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
 
 const DentalService = () => {
 
     const service = allServices;
     const [services, setServices] = useState(service);
+
+    const [value, onChange] = useState(new Date());
 
     // function handleClick() {
 
@@ -27,7 +30,12 @@ const DentalService = () => {
                 <div className="col-md-6">
                     <h1>Appointment</h1>
 
-                    <input className="form-control w-50 mt-5" type="date" name="" id="" />
+                    <div>
+                        <Calendar
+                            onChange={onChange}
+                            value={value}
+                        />
+                    </div>
                 </div>
 
                 <div className="col-md-6">
@@ -35,7 +43,7 @@ const DentalService = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="container">
                 {
                     services.map(service => <div className="container mt-5" key={service.id}>
                         <div className="card w-25" >
