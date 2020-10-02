@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import NoFound from './components/NoFound/NoFound';
+import Appointment from './components/Appointment/Appointment';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
 
         <Route path="/dentalService">
           <DentalService></DentalService>
+        </Route>
+
+        <Route path="/appointment">
+          <Appointment></Appointment>
         </Route>
 
         <Route exact path="/">
